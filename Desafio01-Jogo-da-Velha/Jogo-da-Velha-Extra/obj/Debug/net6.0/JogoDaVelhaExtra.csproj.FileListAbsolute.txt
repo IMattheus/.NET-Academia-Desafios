@@ -1,0 +1,14 @@
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\bin\Debug\net6.0\JogoDaVelhaExtra.exe
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\bin\Debug\net6.0\JogoDaVelhaExtra.deps.json
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\bin\Debug\net6.0\JogoDaVelhaExtra.runtimeconfig.json
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\bin\Debug\net6.0\JogoDaVelhaExtra.dll
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\bin\Debug\net6.0\JogoDaVelhaExtra.pdb
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\JogoDaVelhaExtra.GeneratedMSBuildEditorConfig.editorconfig
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\JogoDaVelhaExtra.AssemblyInfoInputs.cache
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\JogoDaVelhaExtra.AssemblyInfo.cs
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\JogoDaVelhaExtra.csproj.CoreCompileInputs.cache
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\JogoDaVelhaExtra.dll
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\refint\JogoDaVelhaExtra.dll
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\JogoDaVelhaExtra.pdb
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\JogoDaVelhaExtra.genruntimeconfig.cache
+D:\.NET-Academia-Desafios\Jogo-da-Velha-Extra\obj\Debug\net6.0\ref\JogoDaVelhaExtra.dll
