@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 04</title>
+    <!-- 04 -  Crie um parágrafo (<p>) com um texto como conteúdo. Adicione um botão que, ao ser clicado, oculte ou mostre o texto do parágrafo. -->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: justify-all;
+            min-height: 100vh;
+            font-weight: bold;
+            font-size: 25px;
+            font-family: "Segoe UI", sans-serif;
+        }
+        
+        #container {            
+            max-width: 600px;            
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.5; 
+        }
+        
+        button {            
+            width: 200px;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: "Segoe UI", sans-serif;
+            position: absolute;
+            margin-bottom: 350px;
+        }
+    </style>
+</head>
+
+<body>
+<button onclick="toggleParagraph()">Exibir/Ocultar</button>
+<div id="container">
+<p id="paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam architecto at autem consequatur excepturi exercitationem, magnam minima odit omnis placeat quaerat quam saepe similique tempore ullam ut velit. Deleniti..
+<br> <br>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias debitis dolor dolorem dolorum eaque eius explicabo id in magnam optio perferendis placeat porro possimus, quasi reiciendis similique ullam velit veritatis?</p>
+</div>
+<script>
+    function toggleParagraph() {
+        const toggle = document.getElementById("paragraph");
+        if (toggle.style.display === "") {
+            toggle.style.display = "none";
+        } else {
+            toggle.style.display = "";
+        }
+    }
+</script>
+</body>
+</html>

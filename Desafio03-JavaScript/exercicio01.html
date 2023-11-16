@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 01</title>
+    <!--01 - Crie um formulário com 4 botões que, ao clicar em cada um, altere a cor do plano de fundo da página para vermelho, verde, azul e amarelo, respectivamente.-->
+    <style>
+        body {
+            margin: 0;            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-weight: bold;
+            font-size: 25px;
+            font-family: "Segoe UI", sans-serif;
+        }
+     
+        form {
+            display: flex;
+            flex-direction: column;               
+        }
+        
+        button {
+            margin-bottom: 20px;
+            width: 200px;
+            font-weight: bold; 
+            font-size: 20px;
+            font-family: "Segoe UI", sans-serif;
+        }        
+    </style>    
+</head>
+
+<body>
+<header>
+    <p>Clique para alterar a cor do plano de fundo.</p>
+</header>
+
+<form>
+    <button id="redButton">Vermelho</button>
+    <button id="greenButton">Verde</button>
+    <button id="blueButton">Azul</button>
+    <button id="yellowButton">Amarelo</button>
+</form>
+
+<script>
+    const redButton = document.getElementById('redButton');
+    const greenButton = document.getElementById('greenButton');
+    const blueButton = document.getElementById('blueButton');
+    const yellowButton = document.getElementById('yellowButton');    
+   
+    redButton.addEventListener('click', function (event) {
+        event.preventDefault()
+        document.body.style.backgroundColor = 'red'; 
+    });
+
+    greenButton.addEventListener('click', function (event) {
+        event.preventDefault()
+        document.body.style.backgroundColor = 'green';
+    });
+
+    blueButton.addEventListener('click', function (event) {
+        event.preventDefault()
+        document.body.style.backgroundColor = 'blue';
+    });
+
+    yellowButton.addEventListener('click', function (event) {
+        event.preventDefault()
+        document.body.style.backgroundColor = 'yellow';
+    });
+</script>
+</body>
+</html>

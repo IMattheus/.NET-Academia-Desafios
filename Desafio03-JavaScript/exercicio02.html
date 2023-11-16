@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 02</title>
+    <!-- 02 - Crie uma página com 4 links (tag <a>), cada um representando o nome de uma cor, que, utilizando o evento onmouseover altere a cor do plano de fundo para cor correspondente. -->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-weight: bold;
+            font-size: 25px;
+            font-family: "Segoe UI", sans-serif;            
+        } 
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        a {            
+            padding: 2px 55px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            background-color: #EFEFEF;           
+            text-decoration: none;
+            text-align: center;
+            color: black;                        
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <p>Mova o mouse sobre as opções para alterar a cor do plano de fundo.</p>
+</header>
+
+<form>
+    <a id="redButton" href="" onmouseover="document.body.style.backgroundColor = 'red'">Vermelho</a>
+    <a id="greenButton" href="" onmouseover="document.body.style.backgroundColor = 'green'">Verde</a>
+    <a id="blueButton" href="" onmouseover="document.body.style.backgroundColor = 'blue'">Azul</a>
+    <a id="yellowButton" href="" onmouseover="document.body.style.backgroundColor = 'yellow'">Amarelo</a>
+</form>
+</body>
+</html>

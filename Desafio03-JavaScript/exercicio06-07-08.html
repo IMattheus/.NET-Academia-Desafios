@@ -1,0 +1,107 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercícios 06, 07, 08</title>
+        <!-- 06 - Crie um parágrafo com um texto como conteúdo. Crie 4 botões. Dois para trocar a cor da fonte, de branco para preto e vice-versa e outros dois para fazer o mesmo com o fundo do parágrafo. Use divs se julgar necessário. -->
+
+        <!-- 07 - Crie um botão + (mais) e outro – (menos) na mesma página do exercício anterior. Esses botões aumentam e diminuem o tamanho da fonte, respectivamente. -->
+
+        <!-- 08 - Ainda continuando no exercício 6, faça um botão que transforme todo o texto do parágrafo em maiúscula, e outro em minúscula. -->
+        <style>
+            body {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: justify-all;
+                min-height: 100vh;
+                font-weight: bold;
+                font-size: 25px;
+                font-family: "Segoe UI", sans-serif;
+            }
+            
+            #container {
+                max-width: 650px;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 1.5;
+                margin-top: 50px;
+            }
+            
+            button {
+                margin-top: 20px;
+                margin-right: 10px;
+                width: 200px;
+                font-weight: bold;
+                font-size: 20px;
+                font-family: "Segoe UI", sans-serif;
+            }
+            
+            .button-group {
+                display: inline-block;
+                justify-content: space-around;        
+                align-content: baseline;    
+                margin-top: 20px;
+                margin-left: 90px;
+            }
+        </style>
+
+    <body>
+        <div id="container">
+            <div class="button-group">
+                <button onclick="changeFontColor('white')">Fonte: Branca</button>
+                <button onclick="changeBackgroundColor('white')">Fundo: Branco</button>
+                <button onclick="changeFontColor('black')">Fonte: Preta</button>            
+                <button onclick="changeBackgroundColor('black')">Fundo: Preto</button>
+            </div>
+            <p id="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit est ullam amet quidem quis, inventore quae labore saepe, accusantium, nemo fugit recusandae commodi? Repellendus minus ratione beatae dolorum, ad est.</p>
+            <div class="button-group">
+                <button onclick="increaseFontSize()">Zoom +</button>
+                <button onclick="uppercaseParagraph()">Maiúsculo</button>
+                <button onclick="decreaseFontSize()">Zoom -</button>
+                <button onclick="lowercaseParagraph()">Minúsculo</button>
+                <br> <br>
+            </div>
+        </div>
+
+        <script>
+            function changeFontColor(color) {
+                const paragraph = document.getElementById('paragraph');
+                paragraph.style.color = color;
+            }
+
+            function changeBackgroundColor(color) {
+                const paragraph = document.getElementById('paragraph');
+                paragraph.style.backgroundColor = color;
+            }
+
+            function increaseFontSize() {
+                    const paragraph = document.getElementById('paragraph');
+                    const currentSize = window.getComputedStyle(paragraph).fontSize;
+                    const newSize = parseInt(currentSize) + 2 + 'px';
+                    paragraph.style.fontSize = newSize;
+                }
+
+                function decreaseFontSize() {
+                    const paragraph = document.getElementById('paragraph');
+                    const currentSize = window.getComputedStyle(paragraph).fontSize;
+                    const newSize = parseInt(currentSize) - 2 + 'px';
+                    paragraph.style.fontSize = newSize;
+                }
+
+                function uppercaseParagraph() {
+                    const paragraph = document.getElementById('paragraph');
+                    paragraph.textContent = paragraph.textContent.toUpperCase();
+                }
+
+                function lowercaseParagraph() {
+                    const paragraph = document.getElementById('paragraph');
+                    paragraph.textContent = paragraph.textContent.toLowerCase();
+                }
+        </script>
+    </body>
+    </html>

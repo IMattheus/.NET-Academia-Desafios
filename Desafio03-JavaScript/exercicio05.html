@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 05</title>
+    <!-- 05 - Crie um formulário de seleção de itens com checkbox. O formulário deve possuir um botão desabilitado. O botão só se torna clicável quando tiver pelo menos 2 checkboxs marcado. -->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: justify-all;
+            min-height: 100vh;
+            font-weight: bold;
+            font-size: 25px;
+            font-family: "Segoe UI", sans-serif;
+        }
+        
+        label {
+            padding: 2px 55px;
+            border: 1px solid black;            
+            margin-bottom: 20px;             
+            background-color: #EFEFEF;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+            font-size: 20px;
+            display: flex;
+            
+        }   
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        
+        button {
+            margin-top: 20px;
+            width: 200px;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: "Segoe UI", sans-serif;
+        }       
+    </style>
+
+<body>
+    <form>
+        <label>
+            <input type="checkbox" id="checkbox1" onclick="checkHandler()"> Item 1
+        </label>
+        <label>
+            <input type="checkbox" id="checkbox2" onclick="checkHandler()"> Item 2
+        </label>
+        <label>
+            <input type="checkbox" id="checkbox3" onclick="checkHandler()"> Item 3
+        </label>
+
+        <button id="submitButton" disabled>Clique aqui</button>
+    </form>
+
+    <script>
+       function checkHandler() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const submitButton = document.getElementById('submitButton');
+    let checkedCount = 0;
+
+    checkboxes.forEach(checkbox => {
+        if (checkbox.checked) {
+            checkedCount++;
+        }
+    });
+
+    if (checkedCount >= 2) {
+        submitButton.disabled = false;
+    } else {
+        submitButton.disabled = true;
+    }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 03</title>
+    <!-- 03 - Crie uma página com uma lista (select - RadioButton) com 4 opções de cores. Ao selecionar uma opção de cor, altere o plano de fundo da página para a cor específica. -->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-weight: bold;
+            font-size: 25px;
+            font-family: "Segoe UI", sans-serif;
+        }
+
+        form {
+            display: flex;            
+        }
+
+        label {
+            padding: 2px 25px;
+            border: 1px solid black;            
+            margin-right: 20px;             
+            background-color: #EFEFEF;
+            text-decoration: none;
+            text-align: center;
+            color: black;
+            font-size: 20px;
+        }        
+    </style>
+
+</head>
+
+<body>
+<header>
+    <p>Selecione a opção desejada para alterar a cor do plano de fundo.</p>
+</header>
+<form>
+    <label for="redRadio"> Vermelho
+        <input type="radio" id="redRadio" name="color" value="red" onclick="changeBackgroundColor('red')">
+    </label>
+
+    <label for="greenRadio"> Verde
+        <input type="radio" id="greenRadio" name="color" value="green" onclick="changeBackgroundColor('green')">
+    </label>
+
+    <label for="blueRadio"> Azul
+        <input type="radio" id="blueRadio" name="color" value="blue" onclick="changeBackgroundColor('blue')">
+    </label>
+
+    <label for="yellowRadio"> Amarelo
+        <input type="radio" id="yellowRadio" name="color" value="yellow" onclick="changeBackgroundColor('yellow')">
+    </label>
+</form>
+<script>
+    function changeBackgroundColor(color) {
+        document.body.style.backgroundColor = color;
+    }
+</script>
+</body>
+</html>

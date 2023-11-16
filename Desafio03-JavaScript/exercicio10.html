@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 10</title>
+    <!-- 10 - Crie um formulário de cadastro de cliente. O formulário deve conter os campos Nome (text), Pessoa (Física/Jurídica – radio), CPF (text), CNPJ (text), data de nascimento, endereço (text), cep (text), telefone (text), email. O formulário deve ativar o campo CPF apenas se o RadioButton de pessoa física estiver ativo e o campo de CNPJ no caso de pessoa jurídica. O campo data de nascimento também só deve estar ativo no caso de pessoa física ser selecionado e deve aceitar que somente números sejam digitados. O campo CEP também só deve aceitar número. -->
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: justify-all;
+            min-height: 100vh;
+            font-family: "Segoe UI", sans-serif;
+            font-weight: bold;
+        }
+
+        h1 {
+            
+            border: 1px solid black;            
+            margin-left: 30px;
+            width: 530px;             
+            background-color: #EFEFEF;
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 510px;
+            padding: 7px;
+            margin-top: 5px;
+        }
+
+        input[type="radio"] {
+            margin-left: -250px;
+            
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            background-color: #EFEFEF;            
+            width: 525px;
+            padding: 2px;
+            font-weight: bold;
+            font-size: 20px;
+            font-family: "Segoe UI", sans-serif;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        Formulário de Cadastro
+    </h1>
+    <form onsubmit="return validateForm()">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label>Tipo de Pessoa:</label>
+        <label for="pessoaFisica">Física</label>
+        <input type="radio" id="pessoaFisica" name="tipoPessoa" required onclick="updateFields()">
+        <label for="pessoaJuridica">Jurídica</label>
+        <input type="radio" id="pessoaJuridica" name="tipoPessoa" required onclick="updateFields()">
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" minlength="11" maxlength="11" disabled required>
+
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" name="cnpj" minlength="14" maxlength="14" disabled required>
+
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" max="9999-12-31" disabled required>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco" required>
+
+        <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" minlength="8" maxlength="8" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" minlength="10" maxlength="12" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <input type="submit" value="Cadastrar">
+        <br> <br>
+    </form>
+
+    <script>
+        const pessoaFisica = document.getElementById("pessoaFisica")
+        const pessoaJuridica = document.getElementById("pessoaJuridica")
+        const cpf = document.getElementById("cpf")
+        const cnpj = document.getElementById("cnpj")
+        const dataNascimento = document.getElementById("dataNascimento")
+        const cep = document.getElementById("cep")
+
+        function updateFields() {
+            if (pessoaFisica.checked) {
+                cpf.disabled = false;
+                cnpj.disabled = true;
+                dataNascimento.disabled = false;
+            }
+            
+            if (pessoaJuridica.checked) {
+                cpf.disabled = true;
+                cnpj.disabled = false;
+                dataNascimento.disabled = true;
+            }
+
+            cpf.addEventListener("input", validateNumber);
+            cnpj.addEventListener("input", validateNumber);
+            cep.addEventListener("input", validateNumber);
+            telefone.addEventListener("input", validateNumber);
+
+            function validateNumber(event) {
+                const input = event.target;
+                const inputValue = input.value;
+
+                if (!/^[0-9]+$/.test(inputValue)) {
+                    input.setCustomValidity("Apenas números são permitidos.");
+                } else {
+                    input.setCustomValidity("");
+                }
+            }
+        }
+        
+        function validateForm() {
+            alert('Formulário enviado com sucesso!');
+            return true;
+        }
+    </script>
+</body>
+</html>
